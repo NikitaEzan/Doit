@@ -1,4 +1,4 @@
-package entities;
+package doit.core.entites;
 
 import java.util.Date;
 
@@ -10,24 +10,31 @@ import java.util.Date;
  * Класс для хранения и работы с задачей
  * @author Anatoly
  */
-public class Task extends AbstractTask {
+public class DoitTask extends DoitAbstractTask {
     /** Степень важности задачи */
     private short impDeg;
     /** Статус завершения задачи */
     private boolean complete = false;
     /** Прикрепление */
-    private AbstractAttachment attachment;
+    private DoitAttachment attachment;
 
     /**
-     * Инициализация полей {@link Task#name}, {@link Task#startDate}, {@link Task#attachment}
+     * Инициализация полей {@link DoitTask#name}, {@link DoitTask#startDate}, {@link DoitTask#attachment}
      * @param name Имя
      * @param start Дата начала
-     * @param attch Прикрепление
+     * @param attachment Прикрепление
      */
-    public Task(String name, Date start, AbstractAttachment attch) {
+    public DoitTask(String name, Date start, DoitAttachment attachment) {
         this.name = name;
         this.startDate = start;
-        this.addAttachment(attch);
+        this.attachmentList.add(attachment);
+    }
+    public DoitTask(String name, Date start) {
+        this.name = name;
+        this.startDate = start;
+    }
+    public DoitTask(String description) {
+        this.name = description;
     }
 
     /**
@@ -71,10 +78,10 @@ public class Task extends AbstractTask {
 
     /**
      * Добавление прикрепления
-     * @param attch 
+     * @param attachment
      */
-    public final void addAttachment(AbstractAttachment attch) {
-        attachment = attch;
+    public final void addAttachment(DoitAttachment attachment) {
+        this.attachment = attachment;
     }
     
     /**

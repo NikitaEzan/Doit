@@ -3,9 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package entities;
+package doit.core.entites;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 
 // REVIEW DATE: 12.08.2015
@@ -16,7 +20,8 @@ import java.util.Date;
  * Абстрактный класс, описывающий общие поля и методы, для работы с задачами
  * @author Anatoly
  */
-public abstract class AbstractTask {
+@XmlRootElement
+public abstract class DoitAbstractTask {
     /** Имя */
     protected String name;
     /** Описание */
@@ -26,6 +31,25 @@ public abstract class AbstractTask {
     /** Дата завершения */
     protected Date finishDate;
 
+    protected List<DoitAttachment> attachmentList;
+
+    // TODO: Describe this function here, please
+    protected void addAttachment(DoitAttachment attachment){
+        this.attachmentList.add(attachment);
+    }
+    // TODO: Describe this function here, please
+    protected void removeAttachment(DoitAttachment attachment){
+        this.attachmentList.remove(attachment);
+    }
+    // TODO: Describe this function here, please
+    protected List<DoitAttachment> getAttachments(){
+        return attachmentList;
+    }
+
+
+    protected DoitAbstractTask() {
+        this.attachmentList = new ArrayList<DoitAttachment>();
+    }
 
     /**
      * Редактирование
@@ -43,7 +67,8 @@ public abstract class AbstractTask {
      *
      * TODO: а если я null передам, то что будет?
      */
-    public final void setName(String name) {
+    @XmlElement
+    public void setName(String name) {
         this.name = name;
     }
 
@@ -54,7 +79,7 @@ public abstract class AbstractTask {
      *
      * TODO: О_о почему final ?
      */
-    public final String getName() {
+    public String getName() {
         return this.name;
     }
 
@@ -65,19 +90,20 @@ public abstract class AbstractTask {
      *
      * TODO: О_о почему final ?
      */
-    public final String getDescription() {
+    public String getDescription() {
         return this.description;
     }
 
     /**
-     * Позволяет именить описание ({@link AbstractTask#description})
+     * Позволяет именить описание ({@link DoitAbstractTask#description})
      * final - для невозможности переопределния в дочерних классах
      * @param descr Новое описание
      *
      * TODO: О_о почему final ?
      * TODO: а если я null передам, то что будет?
      */
-    public final void setDescription(String descr) {
+    @XmlElement
+    public void setDescription(String descr) {
         this.description = descr;
     }
 
@@ -87,7 +113,7 @@ public abstract class AbstractTask {
      * @return Дата начала
      * TODO: О_о почему final ?
      */
-    public final Date getStartDate() {
+    public Date getStartDate() {
         return this.startDate;
     }
 
@@ -98,9 +124,10 @@ public abstract class AbstractTask {
      *
      * TODO: О_о почему final ?
      */
-    public final Date getFinishDate() {
+    public Date getFinishDate() {
         return this.finishDate;
     }
+
 
     /**
      * Позволяет изменить дату завершения
@@ -110,7 +137,10 @@ public abstract class AbstractTask {
      * TODO: О_о почему final ?
      * TODO: а если я null передам, то что будет?
      */
-    public final void setFinishDate(Date finish) {
+    @XmlElement
+    public void setFinishDate(Date finish) {
         this.finishDate = finish;
     }
+
+
 }
