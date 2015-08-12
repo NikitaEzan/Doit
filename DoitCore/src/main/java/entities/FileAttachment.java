@@ -11,22 +11,22 @@ package entities;
 
 /**
  * Используется для хранения и работы с прикреплением типа File
- * Наследуется от {@link Attachment}
+ * Наследуется от {@link AbstractAttachment}
  * @author Anatoly
  */
-public class AttachmentFile extends Attachment {
+public class FileAttachment extends AbstractAttachment {
     /**
      * Ссылка на файл
      */
     private Object filePath;
 
     /**
-     * Инициализирует поля {@link AttachmentFile#name} и {@link AttachmentFile#filePath}
+     * Инициализирует поля {@link FileAttachment#name} и {@link FileAttachment#filePath}
      * @param name Имя прикрепления
      * @param file Ссылка на файл-прикрепление
-     * @see AttachmentFile
+     * @see FileAttachment
      */
-    public AttachmentFile(String name, Object file) {
+    public FileAttachment(String name, Object file) {
         super(name);
         filePath = file;
     }

@@ -16,7 +16,7 @@ public class Task extends AbstractTask {
     /** Статус завершения задачи */
     private boolean complete = false;
     /** Прикрепление */
-    private Attachment attachment;
+    private AbstractAttachment attachment;
 
     /**
      * Инициализация полей {@link Task#name}, {@link Task#startDate}, {@link Task#attachment}
@@ -24,9 +24,9 @@ public class Task extends AbstractTask {
      * @param start Дата начала
      * @param attch Прикрепление
      */
-    public Task(String name, Date start, Attachment attch) {
-        super(name, start);
-        //this.setImportance();
+    public Task(String name, Date start, AbstractAttachment attch) {
+        this.name = name;
+        this.startDate = start;
         this.addAttachment(attch);
     }
 
@@ -73,7 +73,7 @@ public class Task extends AbstractTask {
      * Добавление прикрепления
      * @param attch 
      */
-    public final void addAttachment(Attachment attch) {
+    public final void addAttachment(AbstractAttachment attch) {
         attachment = attch;
     }
     

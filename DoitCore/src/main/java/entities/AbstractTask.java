@@ -8,7 +8,7 @@ package entities;
 import java.util.Date;
 
 
-// REVIEW DATE: 11.08.2015
+// REVIEW DATE: 12.08.2015
 // REVIEWER: ALMAZ
 
 
@@ -16,7 +16,7 @@ import java.util.Date;
  * Абстрактный класс, описывающий общие поля и методы, для работы с задачами
  * @author Anatoly
  */
-abstract public class AbstractTask {
+public abstract class AbstractTask {
     /** Имя */
     protected String name;
     /** Описание */
@@ -26,19 +26,11 @@ abstract public class AbstractTask {
     /** Дата завершения */
     protected Date finishDate;
 
-    /**
-     * Инициализирует поля {@link AbstractTask#name} и {@link AbstractTask#startDate}
-     * @param name Имя
-     * @param start Дата начала
-     * @see AbstractTask
-     */
-    protected AbstractTask(String name, Date start) {
-        setName(name);
-        startDate = start;
-    }
 
     /**
      * Редактирование
+     *
+     * TODO: O_o - и как собрался редактировать таску?
      */
     public void editTask(){
         
@@ -48,6 +40,8 @@ abstract public class AbstractTask {
      * Изменение имени
      * final - для невозможности переопределния в дочерних классах
      * @param name Новое имя
+     *
+     * TODO: а если я null передам, то что будет?
      */
     public final void setName(String name) {
         this.name = name;
@@ -57,6 +51,8 @@ abstract public class AbstractTask {
      * Получение имени
      * final - для невозможности переопределния в дочерних классах
      * @return Имя
+     *
+     * TODO: О_о почему final ?
      */
     public final String getName() {
         return this.name;
@@ -66,6 +62,8 @@ abstract public class AbstractTask {
      * Возвращает описание
      * final - для невозможности переопределния в дочерних классах
      * @return Описание
+     *
+     * TODO: О_о почему final ?
      */
     public final String getDescription() {
         return this.description;
@@ -75,6 +73,9 @@ abstract public class AbstractTask {
      * Позволяет именить описание ({@link AbstractTask#description})
      * final - для невозможности переопределния в дочерних классах
      * @param descr Новое описание
+     *
+     * TODO: О_о почему final ?
+     * TODO: а если я null передам, то что будет?
      */
     public final void setDescription(String descr) {
         this.description = descr;
@@ -84,6 +85,7 @@ abstract public class AbstractTask {
      * Возвращает объект Date - дата начала
      * final - для невозможности переопределния в дочерних классах
      * @return Дата начала
+     * TODO: О_о почему final ?
      */
     public final Date getStartDate() {
         return this.startDate;
@@ -93,6 +95,8 @@ abstract public class AbstractTask {
      * Возвращает объект Date - дата завершения
      * final - для невозможности переопределния в дочерних классах
      * @return Дата завершения
+     *
+     * TODO: О_о почему final ?
      */
     public final Date getFinishDate() {
         return this.finishDate;
@@ -102,6 +106,9 @@ abstract public class AbstractTask {
      * Позволяет изменить дату завершения
      * final - для невозможности переопределния в дочерних классах
      * @param finish Дата завершения
+     *
+     * TODO: О_о почему final ?
+     * TODO: а если я null передам, то что будет?
      */
     public final void setFinishDate(Date finish) {
         this.finishDate = finish;

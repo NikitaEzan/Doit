@@ -6,7 +6,7 @@
 package entities;
 
 
-// REVIEW DATE: 11.08.2015
+// REVIEW DATE: 12.08.2015
 // REVIEWER: ALMAZ
 
 
@@ -14,18 +14,18 @@ package entities;
  * Абстрактный класс, описывает общие поля и методы для работы с прикреплениями
  * @author Anatoly
  */
-public abstract class Attachment {
+public abstract class AbstractAttachment {
     /**
      * Имя прикрепления
      */
     protected String name;
 
     /**
-     * Инициализирует поле {@link Attachment#name}
+     * Инициализирует поле {@link AbstractAttachment#name}
      * @param name Имя прикрепления
-     * @see Attachment
+     * @see AbstractAttachment
      */
-    protected Attachment(String name) {
+    protected AbstractAttachment(String name) {
         setName(name);
     }
 
@@ -37,6 +37,7 @@ public abstract class Attachment {
     }
     
     /**
+     * TODO: Как будет удаляться? По каким критериям?
      * Удаление прикрепления
      */
     public void deleteAttachment(){
@@ -46,6 +47,7 @@ public abstract class Attachment {
     /**
      * Возвращает имя прикрепления
      * @return Имя прикрепления
+     * TODO: О_о почему final ?
      */
     public final String getName(){
         return name;
@@ -54,6 +56,9 @@ public abstract class Attachment {
     /**
      * Позволяет задать имя прикрепления
      * @param nameString Новое имя прикрепления
+     *
+     * TODO: О_о почему final ?
+     * TODO: а если я null передам, то что будет?
      */
     public final void setName(String nameString){
         this.name = nameString;
