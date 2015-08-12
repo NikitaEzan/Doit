@@ -4,21 +4,21 @@ package entities;
 // REVIEWER: ALMAZ
 
 /**
- * Информация о пользователе
+ * В»РЅС„РѕСЂРјР°С†РёВ¤ Рѕ РїРѕР»СЊР·РѕРІР°С‚РµР»Рµ
  * @author Anatoly
  */
 public class User {
-    /** Имя */
+    /** В»РјВ¤ */
     private String name;
-    /** Пароль */
+    /** С•Р°СЂРѕР»СЊ */
     private String pass;
     /** E-mail */
     private String e_mail;
 
     /**
-     * Установка основной информации о пользователе
-     * @param pass Пароль
-     * @param name Имя
+     * вЂќСЃС‚Р°РЅРѕРІРєР° РѕСЃРЅРѕРІРЅРѕР№ РёРЅС„РѕСЂРјР°С†РёРё Рѕ РїРѕР»СЊР·РѕРІР°С‚РµР»Рµ
+     * @param pass С•Р°СЂРѕР»СЊ
+     * @param name В»РјВ¤
      * @param e_mail E-mail
      */
     public User(String pass, String name, String e_mail) {
@@ -28,7 +28,7 @@ public class User {
     }
     
     /**
-     * Редактирование информации о пользователе
+     * вЂ“РµРґР°РєС‚РёСЂРѕРІР°РЅРёРµ РёРЅС„РѕСЂРјР°С†РёРё Рѕ РїРѕР»СЊР·РѕРІР°С‚РµР»Рµ
      */
     public void editUser(){
         

@@ -11,18 +11,18 @@ package entities;
 
 
 /**
- * Используется для хранения и работы с прикреплением типа Note
- * Наследуется от {@link Attachment}
+ * РСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ РґР»СЏ С…СЂР°РЅРµРЅРёСЏ Рё СЂР°Р±РѕС‚С‹ СЃ РїСЂРёРєСЂРµРїР»РµРЅРёРµРј С‚РёРїР° Note
+ * РќР°СЃР»РµРґСѓРµС‚СЃСЏ РѕС‚ {@link Attachment}
  * @author Anatoly
  */
 public class AttachmentNote extends Attachment {
     /**
-     * Объект Note, для хранения заметки
+     * РћР±СЉРµРєС‚ Note, РґР»СЏ С…СЂР°РЅРµРЅРёСЏ Р·Р°РјРµС‚РєРё
      */
     private Object Note;
 
     /**
-     * Инициализирует поле {@link AttachmentNote#name}
+     * РРЅРёС†РёР°Р»РёР·РёСЂСѓРµС‚ РїРѕР»Рµ {@link AttachmentNote#name}
      * @param name 
      * @see AttachmentNode
      */
@@ -48,7 +48,7 @@ public class AttachmentNote extends Attachment {
     }
     
     /**
-     * Редактирование заметки
+     * Р РµРґР°РєС‚РёСЂРѕРІР°РЅРёРµ Р·Р°РјРµС‚РєРё
      */
     public final void editNote(){
         

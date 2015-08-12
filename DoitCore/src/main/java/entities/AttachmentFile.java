@@ -10,20 +10,20 @@ package entities;
 
 
 /**
- * Используется для хранения и работы с прикреплением типа File
- * Наследуется от {@link Attachment}
+ * РСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ РґР»СЏ С…СЂР°РЅРµРЅРёСЏ Рё СЂР°Р±РѕС‚С‹ СЃ РїСЂРёРєСЂРµРїР»РµРЅРёРµРј С‚РёРїР° File
+ * РќР°СЃР»РµРґСѓРµС‚СЃСЏ РѕС‚ {@link Attachment}
  * @author Anatoly
  */
 public class AttachmentFile extends Attachment {
     /**
-     * Ссылка на файл
+     * РЎСЃС‹Р»РєР° РЅР° С„Р°Р№Р»
      */
     private Object filePath;
 
     /**
-     * Инициализирует поля {@link AttachmentFile#name} и {@link AttachmentFile#filePath}
-     * @param name Имя прикрепления
-     * @param file Ссылка на файл-прикрепление
+     * РРЅРёС†РёР°Р»РёР·РёСЂСѓРµС‚ РїРѕР»СЏ {@link AttachmentFile#name} Рё {@link AttachmentFile#filePath}
+     * @param name РРјСЏ РїСЂРёРєСЂРµРїР»РµРЅРёСЏ
+     * @param file РЎСЃС‹Р»РєР° РЅР° С„Р°Р№Р»-РїСЂРёРєСЂРµРїР»РµРЅРёРµ
      * @see AttachmentFile
      */
     public AttachmentFile(String name, Object file) {

@@ -7,22 +7,22 @@ import java.util.Date;
 
 
 /**
- * Класс для хранения и работы с задачей
+ * РљР»Р°СЃСЃ РґР»СЏ С…СЂР°РЅРµРЅРёСЏ Рё СЂР°Р±РѕС‚С‹ СЃ Р·Р°РґР°С‡РµР№
  * @author Anatoly
  */
 public class Task extends AbstractTask {
-    /** Степень важности задачи */
+    /** РЎС‚РµРїРµРЅСЊ РІР°Р¶РЅРѕСЃС‚Рё Р·Р°РґР°С‡Рё */
     private short impDeg;
-    /** Статус завершения задачи */
+    /** РЎС‚Р°С‚СѓСЃ Р·Р°РІРµСЂС€РµРЅРёСЏ Р·Р°РґР°С‡Рё */
     private boolean complete = false;
-    /** Прикрепление */
+    /** РџСЂРёРєСЂРµРїР»РµРЅРёРµ */
     private Attachment attachment;
 
     /**
-     * Инициализация полей {@link Task#name}, {@link Task#startDate}, {@link Task#attachment}
-     * @param name Имя
-     * @param start Дата начала
-     * @param attch Прикрепление
+     * РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ РїРѕР»РµР№ {@link Task#name}, {@link Task#startDate}, {@link Task#attachment}
+     * @param name РРјСЏ
+     * @param start Р”Р°С‚Р° РЅР°С‡Р°Р»Р°
+     * @param attch РџСЂРёРєСЂРµРїР»РµРЅРёРµ
      */
     public Task(String name, Date start, Attachment attch) {
         super(name, start);
@@ -31,7 +31,7 @@ public class Task extends AbstractTask {
     }
 
     /**
-     * Изменение степени важности задачи
+     * РР·РјРµРЅРµРЅРёРµ СЃС‚РµРїРµРЅРё РІР°Р¶РЅРѕСЃС‚Рё Р·Р°РґР°С‡Рё
      * @param imDeg 
      */
     public void setImportance(short imDeg) {
@@ -39,38 +39,38 @@ public class Task extends AbstractTask {
     }
 
     /**
-     * Возвращает степень важности задачи
+     * Р’РѕР·РІСЂР°С‰Р°РµС‚ СЃС‚РµРїРµРЅСЊ РІР°Р¶РЅРѕСЃС‚Рё Р·Р°РґР°С‡Рё
      * @param imDeg
-     * @return Целое число - степень важности
+     * @return Р¦РµР»РѕРµ С‡РёСЃР»Рѕ - СЃС‚РµРїРµРЅСЊ РІР°Р¶РЅРѕСЃС‚Рё
      */
     public short getImportance(short imDeg) {
         return this.impDeg;
     }
 
     /**
-     * Статус завершения задачи
-     * @return false - не завершена, true - завершена
+     * РЎС‚Р°С‚СѓСЃ Р·Р°РІРµСЂС€РµРЅРёСЏ Р·Р°РґР°С‡Рё
+     * @return false - РЅРµ Р·Р°РІРµСЂС€РµРЅР°, true - Р·Р°РІРµСЂС€РµРЅР°
      */
     public boolean isComplete() {
         return this.complete;
     }
 
     /**
-     * Изменение статуса завершения задачи
+     * РР·РјРµРЅРµРЅРёРµ СЃС‚Р°С‚СѓСЃР° Р·Р°РІРµСЂС€РµРЅРёСЏ Р·Р°РґР°С‡Рё
      */
     public void switchComplete() {
         this.complete = !this.complete;
     }
 
     /**
-     * Удаление прикрепления
+     * РЈРґР°Р»РµРЅРёРµ РїСЂРёРєСЂРµРїР»РµРЅРёСЏ
      */
     public final void deleteAttachment() {
 
     }
 
     /**
-     * Добавление прикрепления
+     * Р”РѕР±Р°РІР»РµРЅРёРµ РїСЂРёРєСЂРµРїР»РµРЅРёСЏ
      * @param attch 
      */
     public final void addAttachment(Attachment attch) {
@@ -78,7 +78,7 @@ public class Task extends AbstractTask {
     }
     
     /**
-     * Редактирование задачи
+     * Р РµРґР°РєС‚РёСЂРѕРІР°РЅРёРµ Р·Р°РґР°С‡Рё
      */
     @Override
     public void editTask(){
