@@ -11,24 +11,52 @@ package entities;
 
 
 /**
- * ???
- * <p/>
- * Что это?
- * Кто писал?
- * Зачем это писали?
- * Почему abstract ??
+ * Абстрактный класс, описывает общие поля и методы для работы с прикреплениями
+ * @author Anatoly
  */
 public abstract class Attachment {
-    //TODO: ??? JavaDoc!!!
-    private String name;
+    /**
+     * Имя прикрепления
+     */
+    protected String name;
 
-    //TODO: ??? JavaDoc!!!
-    Attachment(String name) {
-        this.name = name;
+    /**
+     * Инициализирует поле {@link Attachment#name}
+     * @param name Имя прикрепления
+     * @see Attachment
+     */
+    protected Attachment(String name) {
+        setName(name);
     }
 
-    //TODO: ??? JavaDoc!!!
+    /**
+     * Редактирование прикрепления
+     */
     public void editAttachment() {
-
+        
+    }
+    
+    /**
+     * Удаление прикрепления
+     */
+    public void deleteAttachment(){
+        
+    }
+    
+    /**
+     * Возвращает имя прикрепления
+     * @return Имя прикрепления
+     */
+    public final String getName(){
+        return name;
+    }
+    
+    /**
+     * Позволяет задать имя прикрепления
+     * @param nameString Новое имя прикрепления
+     */
+    public final void setName(String nameString){
+        this.name = nameString;
     }
 }
+

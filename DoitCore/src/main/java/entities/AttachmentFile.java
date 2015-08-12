@@ -10,27 +10,41 @@ package entities;
 
 
 /**
- * ???
- * <p/>
- * Что это?
- * Кто писал?
- * Зачем это писали?
- * <p/>
- * НЕ все функции тут описаны !
+ * Используется для хранения и работы с прикреплением типа File
+ * Наследуется от {@link Attachment}
+ * @author Anatoly
  */
 public class AttachmentFile extends Attachment {
-    //TODO: ??? JavaDoc!!!
-    private Object FilePath;
+    /**
+     * Ссылка на файл
+     */
+    private Object filePath;
 
-    //TODO: ??? JavaDoc!!!
-    //TODO: зачем? Какая область видимости?
-    AttachmentFile(String name) {
+    /**
+     * Инициализирует поля {@link AttachmentFile#name} и {@link AttachmentFile#filePath}
+     * @param name Имя прикрепления
+     * @param file Ссылка на файл-прикрепление
+     * @see AttachmentFile
+     */
+    public AttachmentFile(String name, Object file) {
         super(name);
+        filePath = file;
     }
 
-    //TODO: ??? JavaDoc!!!
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void editAttachment() {
-
+        
     }
+    
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void deleteAttachment(){
+        
+    }
+    
 }

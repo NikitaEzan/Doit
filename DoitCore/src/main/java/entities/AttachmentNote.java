@@ -11,26 +11,46 @@ package entities;
 
 
 /**
- * ???
- * <p/>
- * Что это?
- * Кто писал?
- * Зачем это писали?
- * <p/>
- * НЕ все функции тут описаны !
+ * Используется для хранения и работы с прикреплением типа Note
+ * Наследуется от {@link Attachment}
+ * @author Anatoly
  */
 public class AttachmentNote extends Attachment {
+    /**
+     * Объект Note, для хранения заметки
+     */
     private Object Note;
-    //TODO: ??? JavaDoc!!!
-    //TODO: зачем? Какая область видимости?
-    AttachmentNote(String name) {
+
+    /**
+     * Инициализирует поле {@link AttachmentNote#name}
+     * @param name 
+     * @see AttachmentNode
+     */
+    public AttachmentNote(String name) {
         super(name);
+        editNote();
     }
 
-
-    //TODO: ??? JavaDoc!!!
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void editAttachment() {
-
+        
+    }
+    
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void deleteAttachment(){
+        
+    }
+    
+    /**
+     * Редактирование заметки
+     */
+    public final void editNote(){
+        
     }
 }
