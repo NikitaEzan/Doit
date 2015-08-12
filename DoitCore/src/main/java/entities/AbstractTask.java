@@ -13,57 +13,97 @@ import java.util.Date;
 
 
 /**
- * ???
- * <p/>
- * Р§С‚Рѕ СЌС‚Рѕ?
- * РљС‚Рѕ РїРёСЃР°Р»?
- * Р—Р°С‡РµРј СЌС‚Рѕ РїРёСЃР°Р»Рё?
+ * Абстрактный класс, описывающий общие поля и методы, для работы с задачами
+ * @author Anatoly
  */
 abstract public class AbstractTask {
+    /** Имя */
     protected String name;
+    /** Описание */
     protected String description;
+    /** Дата начала */
     protected Date startDate;
+    /** Дата завершения */
     protected Date finishDate;
 
+    /**
+     * Инициализирует поля {@link AbstractTask#name} и {@link AbstractTask#startDate}
+     * @param name Имя
+     * @param start Дата начала
+     * @see AbstractTask
+     */
+    protected AbstractTask(String name, Date start) {
+        setName(name);
+        startDate = start;
+    }
 
-    // РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ 0_Рѕ Р—Р°С‡РµРј ????
-    AbstractTask(String name, Date dS) {
+    /**
+     * Редактирование
+     */
+    public void editTask(){
+        
+    }
+    
+    /**
+     * Изменение имени
+     * final - для невозможности переопределния в дочерних классах
+     * @param name Новое имя
+     */
+    public final void setName(String name) {
         this.name = name;
-        startDate = dS;
     }
 
-    //TODO: ??? JavaDoc!!
-    public void setName(String name) {
-
-    }
-
-    //TODO: ??? JavaDoc!!!
-    public String getName() {
+    /**
+     * Получение имени
+     * final - для невозможности переопределния в дочерних классах
+     * @return Имя
+     */
+    public final String getName() {
         return this.name;
     }
 
-    //TODO: ??? JavaDoc!!!
-    public String getDescription() {
+    /**
+     * Возвращает описание
+     * final - для невозможности переопределния в дочерних классах
+     * @return Описание
+     */
+    public final String getDescription() {
         return this.description;
     }
 
-    //TODO: ??? JavaDoc!!!
-    public void setDescription(String descr) {
-
+    /**
+     * Позволяет именить описание ({@link AbstractTask#description})
+     * final - для невозможности переопределния в дочерних классах
+     * @param descr Новое описание
+     */
+    public final void setDescription(String descr) {
+        this.description = descr;
     }
 
-    //TODO: ??? JavaDoc!!!
-    public Date getStartDate() {
+    /**
+     * Возвращает объект Date - дата начала
+     * final - для невозможности переопределния в дочерних классах
+     * @return Дата начала
+     */
+    public final Date getStartDate() {
         return this.startDate;
     }
 
-    //TODO: ??? JavaDoc!!!
-    public Date getFinishDate() {
+    /**
+     * Возвращает объект Date - дата завершения
+     * final - для невозможности переопределния в дочерних классах
+     * @return Дата завершения
+     */
+    public final Date getFinishDate() {
         return this.finishDate;
     }
 
-    //TODO: ??? JavaDoc!!! dE ???
-    public void setFinishDate(Date dE) {
-        this.finishDate = dE;
+    /**
+     * Позволяет изменить дату завершения
+     * final - для невозможности переопределния в дочерних классах
+     * @param finish Дата завершения
+     */
+    public final void setFinishDate(Date finish) {
+        this.finishDate = finish;
     }
 }

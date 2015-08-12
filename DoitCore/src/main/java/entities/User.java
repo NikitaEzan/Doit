@@ -4,24 +4,33 @@ package entities;
 // REVIEWER: ALMAZ
 
 /**
- * ???
- * <p/>
- * Р§С‚Рѕ СЌС‚Рѕ?
- * РљС‚Рѕ РїРёСЃР°Р»?
- * Р—Р°С‡РµРј СЌС‚Рѕ РїРёСЃР°Р»Рё?
+ * Информация о пользователе
+ * @author Anatoly
  */
 public class User {
+    /** Имя */
     private String name;
+    /** Пароль */
     private String pass;
+    /** E-mail */
     private String e_mail;
 
-    //TODO: ??? JavaDoc!!!
-    //TODO: Р·Р°С‡РµРј? РљР°РєР°СЏ РѕР±Р»Р°СЃС‚СЊ РІРёРґРёРјРѕСЃС‚Рё?
-    User(String pass, String name, String e_mail) {
+    /**
+     * Установка основной информации о пользователе
+     * @param pass Пароль
+     * @param name Имя
+     * @param e_mail E-mail
+     */
+    public User(String pass, String name, String e_mail) {
         this.name = name;
         this.pass = pass;
         this.e_mail = e_mail;
     }
-
-
+    
+    /**
+     * Редактирование информации о пользователе
+     */
+    public void editUser(){
+        
+    }
 }

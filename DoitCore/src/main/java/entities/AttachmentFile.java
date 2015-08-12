@@ -10,27 +10,41 @@ package entities;
 
 
 /**
- * ???
- * <p/>
- * Р§С‚Рѕ СЌС‚Рѕ?
- * РљС‚Рѕ РїРёСЃР°Р»?
- * Р—Р°С‡РµРј СЌС‚Рѕ РїРёСЃР°Р»Рё?
- * <p/>
- * РќР• РІСЃРµ С„СѓРЅРєС†РёРё С‚СѓС‚ РѕРїРёСЃР°РЅС‹ !
+ * Используется для хранения и работы с прикреплением типа File
+ * Наследуется от {@link Attachment}
+ * @author Anatoly
  */
 public class AttachmentFile extends Attachment {
-    //TODO: ??? JavaDoc!!!
-    private Object FilePath;
+    /**
+     * Ссылка на файл
+     */
+    private Object filePath;
 
-    //TODO: ??? JavaDoc!!!
-    //TODO: Р·Р°С‡РµРј? РљР°РєР°СЏ РѕР±Р»Р°СЃС‚СЊ РІРёРґРёРјРѕСЃС‚Рё?
-    AttachmentFile(String name) {
+    /**
+     * Инициализирует поля {@link AttachmentFile#name} и {@link AttachmentFile#filePath}
+     * @param name Имя прикрепления
+     * @param file Ссылка на файл-прикрепление
+     * @see AttachmentFile
+     */
+    public AttachmentFile(String name, Object file) {
         super(name);
+        filePath = file;
     }
 
-    //TODO: ??? JavaDoc!!!
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void editAttachment() {
-
+        
     }
+    
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void deleteAttachment(){
+        
+    }
+    
 }

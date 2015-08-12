@@ -5,61 +5,83 @@ import java.util.Date;
 // REVIEW DATE: 11.08.2015
 // REVIEWER: ALMAZ
 
+
 /**
- * ???
- * <p/>
- * Р§С‚Рѕ СЌС‚Рѕ?
- * РљС‚Рѕ РїРёСЃР°Р»?
- * Р—Р°С‡РµРј СЌС‚Рѕ РїРёСЃР°Р»Рё?
+ * Класс для хранения и работы с задачей
+ * @author Anatoly
  */
-
-//TODO: ??? JavaDoc!!!
-//TODO: Р·Р°С‡РµРј? Рћ_Рѕ
-enum ImportanceDeg {
-    ONE, TWO, THREE, FOUR
-}
-
-
 public class Task extends AbstractTask {
-    private ImportanceDeg impDeg;
+    /** Степень важности задачи */
+    private short impDeg;
+    /** Статус завершения задачи */
     private boolean complete = false;
+    /** Прикрепление */
     private Attachment attachment;
 
-    //TODO: ??? JavaDoc!!!
-    //TODO: Р·Р°С‡РµРј? РљР°РєР°СЏ РѕР±Р»Р°СЃС‚СЊ РІРёРґРёРјРѕСЃС‚Рё?
-    Task(String name, Date dS, Attachment attch) {
-        super(name, dS);
+    /**
+     * Инициализация полей {@link Task#name}, {@link Task#startDate}, {@link Task#attachment}
+     * @param name Имя
+     * @param start Дата начала
+     * @param attch Прикрепление
+     */
+    public Task(String name, Date start, Attachment attch) {
+        super(name, start);
         //this.setImportance();
         this.addAttachment(attch);
     }
 
-    //TODO: ??? JavaDoc!!!
-    public void setImportance(ImportanceDeg imDeg) {
+    /**
+     * Изменение степени важности задачи
+     * @param imDeg 
+     */
+    public void setImportance(short imDeg) {
         this.impDeg = imDeg;
     }
 
-    //TODO: ??? JavaDoc!!!
-    public String getImportance(ImportanceDeg imDeg) {
-        return imDeg.name();
+    /**
+     * Возвращает степень важности задачи
+     * @param imDeg
+     * @return Целое число - степень важности
+     */
+    public short getImportance(short imDeg) {
+        return this.impDeg;
     }
 
-    //TODO: ??? JavaDoc!!!
+    /**
+     * Статус завершения задачи
+     * @return false - не завершена, true - завершена
+     */
     public boolean isComplete() {
         return this.complete;
     }
 
-    //TODO: ??? JavaDoc!!!
+    /**
+     * Изменение статуса завершения задачи
+     */
     public void switchComplete() {
         this.complete = !this.complete;
     }
 
-    //TODO: ??? JavaDoc!!!
-    public void delete() {
+    /**
+     * Удаление прикрепления
+     */
+    public final void deleteAttachment() {
 
     }
 
-    //TODO: ??? JavaDoc!!!
-    public void addAttachment(Attachment attch) {
+    /**
+     * Добавление прикрепления
+     * @param attch 
+     */
+    public final void addAttachment(Attachment attch) {
         attachment = attch;
+    }
+    
+    /**
+     * Редактирование задачи
+     */
+    @Override
+    public void editTask(){
+        
     }
 }

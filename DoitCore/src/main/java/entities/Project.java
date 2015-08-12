@@ -5,7 +5,7 @@
  */
 package entities;
 
-import java.util.List;
+import java.util.ArrayList;
 import java.util.Date;
 
 // REVIEW DATE: 11.08.2015
@@ -13,37 +13,57 @@ import java.util.Date;
 
 
 /**
- * ???
- * <p/>
- * Р§С‚Рѕ СЌС‚Рѕ?
- * РљС‚Рѕ РїРёСЃР°Р»?
- * Р—Р°С‡РµРј СЌС‚Рѕ РїРёСЃР°Р»Рё?
- */
-enum Access {
-    self, group
-}
-
-
-/**
- * ???
- * <p/>
- * Р§С‚Рѕ СЌС‚Рѕ?
- * РљС‚Рѕ РїРёСЃР°Р»?
- * Р—Р°С‡РµРј СЌС‚Рѕ РїРёСЃР°Р»Рё?
+ * Класс, реализующий поля и методы для работы с проектом
+ * Наследуется от {@link AbstractTask}
+ * @author Anatoly
  */
 public class Project extends AbstractTask {
-    private List<Task> tasks;
-    private Access owner;
+    /** 
+     * Коллекция задач ({@link Task})
+     * @see Task
+     */
+    private ArrayList<Task> tasks;
+    /**
+     * Поле для хранения значения, которое отвечает за доступ к проекту
+     * false - создатель, true - группа пользователей
+     * @see Access
+     */
+    private boolean owner;
 
-    //TODO: ??? JavaDoc!!!
-    //TODO: Р·Р°С‡РµРј? РљР°РєР°СЏ РѕР±Р»Р°СЃС‚СЊ РІРёРґРёРјРѕСЃС‚Рё?
-    Project(String name, Date dS) {
-        super(name, dS);
-        //this.owner = ;
+    /**
+     * Устанавливает поля {@link Project#name} и {@link Project#startDate}
+     * @param name Имя
+     * @param start Дата начала
+     */
+    public Project(String name, Date start) {
+        super(name, start);
+        this.owner = false;//по умолчанию доступ имеет только создатель проекта
     }
 
-    //TODO: ??? JavaDoc!!!
-    public void addTask(Task t) {
-
+    /**
+     * Редактирование задачи, прикрепленной к проекту
+     * @param t 
+     * @see Task
+     */
+    public void editTask(Task t) {
+        t.editTask();
+    }
+    
+    /**
+     * Удаление задачи, прикрепленной к проекту
+     * @param t 
+     * @see Task
+     */
+    public void deleteTask(Task t){
+        
+    }
+    
+    /**
+     * Добавление задачи к проекту
+     * @param t 
+     * @see Task
+     */
+    public void addTask(Task t){
+        
     }
 }
