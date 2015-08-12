@@ -31,6 +31,7 @@ public class Project extends AbstractTask {
     private boolean owner;
 
     /**
+     * ffff
      * Устанавливает поля {@link Project#name} и {@link Project#startDate}
      * @param name Имя
      * @param start Дата начала
