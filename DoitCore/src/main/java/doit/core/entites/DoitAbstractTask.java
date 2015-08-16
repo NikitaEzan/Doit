@@ -3,9 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package entities;
+package doit.core.entites;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+import javax.xml.bind.annotation.XmlElementWrapper;
+import javax.xml.bind.annotation.XmlType;
 
 
 // REVIEW DATE: 12.08.2015
@@ -16,7 +22,9 @@ import java.util.Date;
  * Абстрактный класс, описывающий общие поля и методы, для работы с задачами
  * @author Anatoly
  */
-public abstract class AbstractTask {
+@XmlRootElement
+@XmlType(propOrder = {"name", "description", "startDate", "finishDate", "attachmentList"})
+public abstract class DoitAbstractTask {
     /** Имя */
     protected String name;
     /** Описание */
@@ -26,91 +34,101 @@ public abstract class AbstractTask {
     /** Дата завершения */
     protected Date finishDate;
 
+    protected List<DoitAttachment> attachmentList;
 
-    /**
-     * Редактирование
-     *
-     * TODO: O_o - и как собрался редактировать таску?
-     */
-    public void editTask(){
-        
+    // TODO: Describe this function here, please
+    public void addAttachment(DoitAttachment attachment){
+        this.attachmentList.add(attachment);
     }
+    // TODO: Describe this function here, please
+    public void removeAttachment(DoitAttachment attachment){
+        this.attachmentList.remove(attachment);
+    }
+    // TODO: Describe this function here, please
+    public List<DoitAttachment> getAttachmentList(){
+        return attachmentList;
+    }
+
+    @XmlElementWrapper(name = "attachments")
+    @XmlElement(name = "attachment")
+    public void setAttachmentList(List<DoitAttachment> attachments){
+        attachmentList = attachments;
+    }
+
+    protected DoitAbstractTask() {
+        this.attachmentList = new ArrayList<DoitAttachment>();
+    }
+
     
     /**
      * Изменение имени
-     * final - для невозможности переопределния в дочерних классах
      * @param name Новое имя
-     *
+     * 
      * TODO: а если я null передам, то что будет?
      */
-    public final void setName(String name) {
+    @XmlElement
+    public void setName(String name) {
         this.name = name;
     }
 
     /**
      * Получение имени
-     * final - для невозможности переопределния в дочерних классах
      * @return Имя
-     *
-     * TODO: О_о почему final ?
      */
-    public final String getName() {
+    public String getName() {
         return this.name;
     }
 
     /**
      * Возвращает описание
-     * final - для невозможности переопределния в дочерних классах
      * @return Описание
-     *
-     * TODO: О_о почему final ?
      */
-    public final String getDescription() {
+    public String getDescription() {
         return this.description;
     }
 
     /**
-     * Позволяет именить описание ({@link AbstractTask#description})
-     * final - для невозможности переопределния в дочерних классах
+     * Позволяет именить описание ({@link DoitAbstractTask#description})
      * @param descr Новое описание
-     *
-     * TODO: О_о почему final ?
+     * 
      * TODO: а если я null передам, то что будет?
      */
-    public final void setDescription(String descr) {
+    @XmlElement
+    public void setDescription(String descr) {
         this.description = descr;
     }
 
     /**
      * Возвращает объект Date - дата начала
-     * final - для невозможности переопределния в дочерних классах
      * @return Дата начала
-     * TODO: О_о почему final ?
      */
-    public final Date getStartDate() {
+    public Date getStartDate() {
         return this.startDate;
     }
 
     /**
      * Возвращает объект Date - дата завершения
-     * final - для невозможности переопределния в дочерних классах
      * @return Дата завершения
-     *
-     * TODO: О_о почему final ?
      */
-    public final Date getFinishDate() {
+    public Date getFinishDate() {
         return this.finishDate;
     }
 
+
     /**
      * Позволяет изменить дату завершения
-     * final - для невозможности переопределния в дочерних классах
      * @param finish Дата завершения
      *
-     * TODO: О_о почему final ?
      * TODO: а если я null передам, то что будет?
      */
-    public final void setFinishDate(Date finish) {
+    @XmlElement
+    public void setFinishDate(Date finish) {
         this.finishDate = finish;
     }
+
+    @XmlElement
+    public void setStartDate(Date start) {
+        this.startDate = start;
+    }
+
 }
